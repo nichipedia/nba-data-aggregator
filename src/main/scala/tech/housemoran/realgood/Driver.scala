@@ -1,6 +1,7 @@
 package tech.housemoran.realgood
 
 import org.hibernate.annotations.common.util.impl.LoggerFactory
+import org.jboss.logging.Logger
 import tech.housemoran.realgood.scrapers.teams.NBATeamScraper
 
 /** ************************************************
@@ -11,13 +12,14 @@ class Driver {
 }
 
 object Driver {
-  val log = LoggerFactory.logger(classOf[Driver])
+  val log: Logger = LoggerFactory.logger(classOf[Driver])
 
   def main(args: Array[String]): Unit = {
-    log.info("NBA Data Aggregator!!")
+    log.info("Sports! Data Aggregator!!")
     val scraper = new NBATeamScraper
     scraper
-      .getTeams
+      .getTeams.head
+      .activePlayers
       .foreach(println)
   }
 }
