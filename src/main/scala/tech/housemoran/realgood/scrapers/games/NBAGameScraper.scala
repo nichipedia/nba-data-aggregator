@@ -45,7 +45,14 @@ class NBAGameScraper extends GameScraper {
           .map(tr => {
             val td = tr.select("td")
             val gameDate = td.get(1).text
-            val
+            val opponent = td.get(5).text
+            val homeCourt = td.get(4).text
+            val homeScore = td.get(8).text
+            val opponentScore = td.get(9).text
+            val homeTeam = name.text
+            homeCourt match {
+              case "@" => new NBAGame
+            }
           })
 
       })
