@@ -13,4 +13,6 @@ class Game(val homeTeam: Team, val awayTeam: Team, val homeScore: Int, val awayS
       awayTeam
     }
   }
+
+  override def toString: String = s"$homeScore : $awayScore ---- $homeTeam vs. $awayTeam"
 }

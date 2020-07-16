@@ -3,7 +3,6 @@ package tech.housemoran.realgood
 import org.hibernate.annotations.common.util.impl.LoggerFactory
 import org.jboss.logging.Logger
 import tech.housemoran.realgood.scrapers.bets.NBABetScraper
-import tech.housemoran.realgood.scrapers.teams.NBATeamScraper
 
 /** ************************************************
  * * Created by Nicholas on 7/9/2020.               **
