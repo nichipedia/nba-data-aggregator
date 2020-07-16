@@ -2,6 +2,8 @@ package tech.housemoran.realgood
 
 import org.hibernate.annotations.common.util.impl.LoggerFactory
 import org.jboss.logging.Logger
+import tech.housemoran.realgood.models.api.Season
+import tech.housemoran.realgood.scrapers.games.NBAGameScraper
 import tech.housemoran.realgood.scrapers.teams.NBATeamScraper
 
 /** ************************************************
@@ -16,10 +18,9 @@ object Driver {
 
   def main(args: Array[String]): Unit = {
     log.info("Sports! Data Aggregator!!")
-    val scraper = new NBATeamScraper
-    scraper
-      .getTeams.head
-      .activePlayers
+    val scraper = new NBAGameScraper
+    scraper.getGames(Season(2019))
       .foreach(println)
+
   }
 }
