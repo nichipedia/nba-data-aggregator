@@ -2,6 +2,7 @@ package tech.housemoran.realgood
 
 import org.hibernate.annotations.common.util.impl.LoggerFactory
 import org.jboss.logging.Logger
+import tech.housemoran.realgood.scrapers.bets.NBABetScraper
 import tech.housemoran.realgood.scrapers.teams.NBATeamScraper
 
 /** ************************************************
@@ -16,10 +17,7 @@ object Driver {
 
   def main(args: Array[String]): Unit = {
     log.info("Sports! Data Aggregator!!")
-    val scraper = new NBATeamScraper
-    scraper
-      .getTeams.head
-      .activePlayers
-      .foreach(println)
+    val scraper = new NBABetScraper
+    scraper.getCurrentBets
   }
 }
