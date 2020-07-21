@@ -1,7 +1,7 @@
 package tech.housemoran.realgood.scrapers.api
 
-import tech.housemoran.realgood.models.api.Bet
+import tech.housemoran.realgood.models.api.Line
 
 trait BetScraper {
-  def getCurrentBets: List[Bet]
+  def getCurrentBets: List[Line]
 }
